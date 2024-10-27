@@ -103,41 +103,12 @@
             margin-bottom: 0.5rem;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .form-group input,
-        .form-group textarea {
+        .menu-image {
             width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--accent-color);
+            height: 200px;
+            object-fit: cover;
             border-radius: 5px;
-        }
-
-        button {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: var(--accent-color);
+            margin-bottom: 1rem;
         }
 
         footer {
@@ -176,7 +147,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#specialties">Our Specialties</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -190,14 +160,17 @@
             <h2>Our Specialties</h2>
             <div class="menu-grid">
                 <div class="menu-item">
+                    <img src="images/torte.jpg" alt="Alpine Chocolate Torte" class="menu-image">
                     <h3>Alpine Chocolate Torte</h3>
                     <p>Rich Swiss chocolate layered with mountain berry compote</p>
                 </div>
                 <div class="menu-item">
+                    <img src="images/sourdough.jpg" alt="Rocky Mountain Sourdough" class="menu-image">
                     <h3>Rocky Mountain Sourdough</h3>
                     <p>Crafted with wild yeast from the Rockies</p>
                 </div>
                 <div class="menu-item">
+                    <img src="images/cookies.jpg" alt="Edelweiss Cookies" class="menu-image">
                     <h3>Edelweiss Cookies</h3>
                     <p>Traditional Swiss butter cookies with a modern twist</p>
                 </div>
@@ -208,37 +181,21 @@
             <h2>Daily Menu</h2>
             <div class="menu-grid">
                 <div class="menu-item">
+                    <img src="images/breads.jpg" alt="Breads" class="menu-image">
                     <h3>Breads</h3>
                     <p>Sourdough, Mountain Rye, Alpine White, Multigrain</p>
                 </div>
                 <div class="menu-item">
+                    <img src="images/pastries.jpg" alt="Pastries" class="menu-image">
                     <h3>Pastries</h3>
                     <p>Croissants, Danish, Mountain Berry Tarts</p>
                 </div>
                 <div class="menu-item">
+                    <img src="images/cakes.jpg" alt="Cakes" class="menu-image">
                     <h3>Cakes</h3>
                     <p>Chocolate Torte, Carrot Cake, Cherry Strudel</p>
                 </div>
             </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
         </section>
     </div>
 
@@ -249,13 +206,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.contact-form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will get back to you soon.');
-                form.reset();
-            });
-
             const menuItems = document.querySelectorAll('.menu-item');
             menuItems.forEach(item => {
                 item.addEventListener('click', function() {
