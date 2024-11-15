@@ -213,19 +213,27 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    if (this.style.transform !== 'scale(1.05)') {
-                        this.style.transform = 'scale(1.05)';
-                        setTimeout(() => {
-                            this.style.transform = 'none';
-                        }, 200);
-                    }
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('nav a');
+        const navHeight = document.querySelector('nav').offsetHeight; // Get the height of the navigation bar
+
+        // Scroll the page with an offset to prevent the header from covering the content
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1); // Get the ID of the target element
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    e.preventDefault(); // Prevent the default anchor behavior
+                    window.scrollTo({
+                        top: targetElement.offsetTop - navHeight, // Scroll to the target, offset by the height of the nav bar
+                        behavior: 'smooth' // Smooth scrolling
+                    });
+                }
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
