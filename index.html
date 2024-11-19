@@ -66,26 +66,28 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 2rem;
+            padding-top: 1rem; /* Add this for vertical spacing */
         }
-
+        
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
+            padding: 0.5rem 1rem; /* Add this for better touch-friendly spacing */
         }
-
+        
         nav a:hover {
             color: var(--border-color);
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -233,15 +235,6 @@
             header {
                 padding-top: 6rem; /* Add extra padding for better spacing */
             }
-            nav ul {
-                padding-top: 1rem;
-            }
-            
-            nav a {
-                padding: 0.5rem 1rem;
-            }
-
-
         }
     </style>
 </head>
