@@ -6,10 +6,10 @@
     <title>Sweeten the World Bakery | From the Rockies to the Alps</title>
     <style>
         :root {
-            --primary-color: #EF3340;
-            --secondary-color: #7C0A02;
+            --primary-color: #EF3340; /* Austrian red */
+            --secondary-color: #7C0A02; /* Darker red */
             --light-color: #FFFFFF;
-            --border-color: #C8102E;
+            --border-color: #C8102E; /* Another Austrian red shade */
             --text-color: #333333;
             --background-light: #F9F5F2;
         }
@@ -24,10 +24,74 @@
         body {
             background-color: var(--light-color);
             line-height: 1.6;
-            color: var(--text-color);
         }
 
-        /* Previous styles remain the same until .section */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header img {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--border-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
         .section {
             margin: 4rem 0;
@@ -36,6 +100,39 @@
             border-radius: 15px;
         }
 
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* New Bio Styles */
         .bio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,9 +179,33 @@
             font-size: 1.2rem;
         }
 
-        /* Previous styles for menu-grid, menu-item, etc. remain the same */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
 
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-cakes {
+                grid-template-columns: 1fr;
+            }
+
             .bio-grid {
                 grid-template-columns: 1fr;
             }
@@ -101,11 +222,39 @@
     </style>
 </head>
 <body>
-    <!-- Header and Nav sections remain the same -->
+    <header>
+        <img src="images/bakery.png" alt="Sweeten the World Bakery Logo">
+        <h1>Sweeten the World Bakery</h1>
+        <p class="tagline">From the Rockies to the Alps</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#specialties">Our Specialties</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <section id="specialties" class="section">
-            <!-- Previous specialties section remains the same -->
+            <h2>Our Specialties</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="images/poppy.jpg" alt="Poppy Moon Claw" class="menu-image">
+                    <h3>Poppy Moon Claw (MohnKrone)</h3>
+                    <p>A delicate, crescent-shaped pastry filled with rich poppy seed paste, offering a subtle hint of sweetness and a touch of nostalgia for classic Austrian flavors.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/nutpastry.jpg" alt="Walnut Horn" class="menu-image">
+                    <h3>Walnut Horn (Nusskipferl)</h3>
+                    <p>A sweet, flaky pastry with a rich walnut filling, inspired by Austrian baking traditions. Perfect with a cup of coffee or tea.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/buntCake.jpg" alt="Mini Marble Cake" class="menu-image">
+                    <h3>Mini Marble Cake (Gugelhupf)</h3>
+                    <p>Our traditional marble cakes in miniature form, offering layers of vanilla and cacao with every bite. Fine for two to share.</p>
+                </div>
+            </div>
         </section>
 
         <section id="about" class="section">
@@ -114,7 +263,7 @@
             
             <div class="bio-grid">
                 <div class="bio-card">
-                    <img src="images/claudia.jpg" alt="Claudia" class="bio-image">
+                    <img src="images/claudia.jpg" alt="Maria" class="bio-image">
                     <h3 class="bio-name">Claudia</h3>
                     <p class="bio-text">I grew up in a small village in the West of Austria, surrounded by mountains, spruce & fir, ash, beech & hazel trees. Gurgling of the Rhine river in my ears. My Mama's hands sewing summer dresses for her daughters or kneading dough. The kitchen hot & sweet, drawing everyone closer.</p>
                     <p class="bio-text">Moving to Colorado as a young Mom, my heart yearned for all those I've left behind and I began to bake Austrian pastries week after week, year after year, charming new friends. Slowly I was known by this land, tended to for a long time by many indigenous peoples. As an herbalist I fell in love with ponderosa pine, chokecherry & gumweed and many plants I was already familiar with. My own roots began to grow deeper & wider and I try to move gently.</p>
@@ -135,6 +284,26 @@
         <p>123 Mountain View Road | (555) 123-4567</p>
     </footer>
 
-    <!-- Previous script section remains the same -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('nav a');
+        const navHeight = document.querySelector('nav').offsetHeight;
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - navHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
